@@ -1,6 +1,7 @@
 // import Youtube from "./components/simpleForm/Youtube";
 import "./App.css";
-import ControlValidationOnChangeOnBlur from "./components/ControlValidations/ControlValidationOnChangeOnBlur";
+import FieldLevelValidations from "./components/FieldLevelValidations/FieldLevelValidations";
+// import ControlValidationOnChangeOnBlur from "./components/ControlValidations/ControlValidationOnChangeOnBlur";
 // import FieldArrayExample from "./components/FieldArrayComponent/FieldArrayExample";
 // import ArrayFormik from "./components/Array/ArrayFormik";
 // import UsingFormikComponent from "./components/formik-component-form/UsingFormikComponent";
@@ -13,7 +14,8 @@ function App() {
       {/* <NestedObjectFormik /> */}
       {/* <ArrayFormik /> */}
       {/* <FieldArrayExample /> */}
-      <ControlValidationOnChangeOnBlur />
+      {/* <ControlValidationOnChangeOnBlur /> */}
+      {<FieldLevelValidations />}
     </div>
   );
 }
