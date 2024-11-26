@@ -1,38 +1,29 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import React from "react";
 import * as Yup from "yup";
-import TextError from "./TextError";
-function UsingFormikComponent() {
+import TextError from "../formik-component-form/TextError";
+
+function NestedObjectFormik() {
   const initialValues = {
     name: "",
     email: "",
     channel: "",
     comments: "",
     address: "",
+    social: {
+      instagram: "",
+      linkdin: "",
+    },
   };
   const onSubmit = (values) => {
     console.log("form data", values);
   };
-
   const validationSchema = Yup.object({
     name: Yup.string().required("Required"),
     email: Yup.string().email("Invalid email formate").required("Required"),
     channel: Yup.string().required("Required"),
     address: Yup.string().required("Required"),
   });
-
-  //   we will replace this useformik with formik components
-  //   const formik = useFormik({
-  //     initialValues: initialValues,
-  //     onSubmit: onSubmit,
-  //     validationSchema: validationSchma,
-  //   });
-
-  //step 2 - import form from formik replace html form with form from fromik
-  //step 3 - import Field component from formik as we can get ride of             {...formik.getFieldProps('channel')}
-  //   {...formik.getFieldProps('channel')}
-
-  //step 4 - import ErrorMessage component that checks if the fields have errors and are touched then only shows validations
-
   return (
     <Formik
       initialValues={initialValues}
@@ -69,7 +60,7 @@ function UsingFormikComponent() {
         </div>
 
         {/* Field components with rendering props method */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label htmlFor="address">Address</label>
           <Field name="address">
             {(props) => {
@@ -85,6 +76,15 @@ function UsingFormikComponent() {
               );
             }}
           </Field>
+        </div> */}
+
+        <div className="form-control">
+          <label htmlFor="instagram">Instagram</label>
+          <Field type="text" id="instagram" name="social.instagram" />
+        </div>
+        <div className="form-control">
+          <label htmlFor="linkdin">LinkdIn</label>
+          <Field type="text" id="linkdin" name="social.linkdin" />
         </div>
         <button type="submit">Submit</button>
       </Form>
@@ -92,4 +92,4 @@ function UsingFormikComponent() {
   );
 }
 
-export default UsingFormikComponent;
+export default NestedObjectFormik;
