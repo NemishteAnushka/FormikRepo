@@ -8,6 +8,7 @@ function FormikContainer() {
     hobbies: "",
     radioOpt: "",
     checkboxOpt: [],
+    birthDate: null,
   };
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid format").required("Required"),
@@ -15,6 +16,7 @@ function FormikContainer() {
     hobbies: Yup.string().required("Required"),
     radioOpt: Yup.string().required("Required"),
     checkboxOpt: Yup.array().required("Select any one"),
+    birthDate: Yup.date().required("req"),
   });
   const onSubmit = (values) => {
     console.log(values);
@@ -74,6 +76,12 @@ function FormikContainer() {
             name="checkboxOpt"
             label="Select checkbox topic"
             options={checkboxOptions}
+          />
+          <FormikControl
+            control="date"
+            name="birthDate"
+            label="BirthDate"
+            placeholder="pick"
           />
           <button type="submit">Submit</button>
         </Form>
