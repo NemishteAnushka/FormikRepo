@@ -26,7 +26,7 @@ function Registration() {
     modeOfContact: Yup.string().required("Required"),
     phone: Yup.string().when("modeOfContact", {
       is: "telephone",
-      then: () => Yup.string().required("Required"),
+      then: () => Yup.string().required("Required"), //this resolved branch is not function error
     }),
   });
 
