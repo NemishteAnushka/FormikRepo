@@ -5,7 +5,7 @@ import TextError from "../TextError";
 function RadioButton(props) {
   const { label, name, options, ...rest } = props;
   return (
-    <div className="form-control">
+    <div>
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
         {({ field }) => {
