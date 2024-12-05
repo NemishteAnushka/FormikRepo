@@ -1,5 +1,6 @@
 import "./App.css";
-import Registration from "./components/Forms/Registration";
+import CourseEnrollment from "./components/Forms/CourseEnrollment";
+// import Registration from "./components/Forms/Registration";
 // import LoginForm from "./components/Forms/LoginForm";
 // import FormikContainer from "./components/FormikContainer";
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <div className="App">
       {/* <FormikContainer /> */}
       {/* <LoginForm /> */}
-      <Registration />
+      {/* <Registration /> */}
+      <CourseEnrollment />
     </div>
   );
 }
